@@ -1,0 +1,31 @@
+*{
+    font-family:"ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    color:rgb(63,41,20);
+    text-align: right;
+    border-radius: 5px;
+    padding-right: 10px;
+}
+
+.navbar-light{
+    background-color: rgb(63,41,20);
+}
+
+.nav-link{
+    border-radius: 20px;
+}
+
+a:link {
+    color:rgb(63,41,20);
+    background-color: #ffb3da;
+    text-decoration: none;          /* gets rid of automatic underlining for links */
+}
+
+a:hover {
+    /* background-color: #ffb3da; */
+    background-color: #ffe066;
+  }
+
+a:visited {
+    background-color: #bfbfbf;
+    opacity: 0.3;
+  }

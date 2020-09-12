@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    font-family:"ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    color:rgb(63,41,20);
+    text-align: left;
+    padding-right: 10px;
+}
+
+.jumbotron{
+    background-color: #ffe066;
+}
