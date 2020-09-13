@@ -1,13 +1,13 @@
 *{
     font-family:"ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-    color:rgb(63,41,20);
+    color:#3f2914;
     text-align: right;
     border-radius: 5px;
     padding-right: 10px;
 }
 
 .navbar-light{
-    background-color: rgb(63,41,20);
+    background-color: #3f2914;
 }
 
 .nav-link{
@@ -25,7 +25,7 @@ a:hover {
     background-color: #ffe066;
   }
 
-a:visited {
+/* a:visited {
     background-color: #bfbfbf;
     opacity: 0.3;
-  }
+  } */
