@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
-import { AboutmeComponent } from './aboutme/aboutme.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 import { RegisterComponent } from './register/register.component';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    AboutmeComponent,
+    AboutusComponent,
     RegisterComponent
   ],
   imports: [
