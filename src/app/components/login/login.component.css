@@ -1,6 +1,8 @@
-/* *{
+*{
     background-color: #3f2914;
-} */
+    padding: 10px;
+    border-radius: 5px;
+}
 .loginText{
-    color: #3f2914;
+    color: #ffe066;
 }
