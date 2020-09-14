@@ -12,4 +12,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // registerFunction() <-- this will persist the new user's information to the database.
+
 }
