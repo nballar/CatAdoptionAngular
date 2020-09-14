@@ -1,27 +1,34 @@
-# CatAdoptionAngular
+# Project 2: Neko Atsume Adoption Agency
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+L.J.O., J.E., N.B., B.E.
 
-## Development server
+This project will seek to build an application that allows users to adopt cats from the mobile game Neko Atsume, provided by the [Neko Atsume API](https://neko-atsume.emshea.com/). Users gain points by login frequency and by completing tasks. These points can then be traded for the cats based on their power level, a value obtained from the API.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Requirements
 
-## Code scaffolding
+Users can:
+* Register
+* Login/Logout
+* Update their information
+* View cat profiles based on the API
+* See a list of cats they have adopted
+* Generate to-do lists that allow them to gain points once a task is completed
+ * Create a task
+ * Mark a task as complete
+ * See frequently used tasks
+* See cats available for adoption
+* Use points accumulated on login and task completion to adopt cats
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* **Stretch Goals:**
+  * Sort/filter for cats
+  * Introduce goodies into the ecosystem
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* **Mandatory Technologies:**
+  * Spring Framework, MVC and ORM
+  * Hibernate
+  * Angular
+  * Log4j
+  * JUnit
+  * Jenkins Pipeline
+  * AWS RDS and EC2
