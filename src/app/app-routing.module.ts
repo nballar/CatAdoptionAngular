@@ -4,6 +4,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { CatprofileComponent } from './components/catprofile/catprofile.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [{
@@ -11,12 +13,20 @@ const routes: Routes = [{
   component:LoginComponent
 },
 {
-  path:'about',
+  path:'aboutus',
   component:AboutusComponent
 },
 {
   path: 'catprofiles',
   component: CatprofileComponent
+},
+{
+  path: 'register',
+  component:RegisterComponent,
+},
+{
+  path: 'homepage',
+  component:HomepageComponent,
 },
 {
   path:'logout',
