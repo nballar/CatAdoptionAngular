@@ -2,6 +2,7 @@
   <div class="row">
     <input class="col" type="text" [(ngModel)]="input" />
     <button class="btn btn-primary" (click)="getCats()">Favorite Cat?</button>
+    <button class="btn btn-primary" (click)="getAllCats()">Get All Cats</button>
   </div>
   <!--TABLE WILL NOT SHOW UNLESS TRUTHY VALUE-->
   <table class="table" *ngIf="cat">

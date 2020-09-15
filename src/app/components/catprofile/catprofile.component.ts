@@ -25,4 +25,21 @@ export class CatprofileComponent implements OnInit {
       }
     )
   }
+
+
+  getAllCats(): void {
+    this.cs.getAllCats().subscribe(
+      (data) => {
+        console.log(data)
+        for (let c in data) {
+          console.log(c);
+        }
+        
+      },
+      () => {
+        this.cat = null;
+        console.log("something went wrong");
+      }
+    )
+  }
 }
