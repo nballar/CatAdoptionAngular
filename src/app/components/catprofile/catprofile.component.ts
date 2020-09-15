@@ -10,13 +10,16 @@ import { Cat } from '../../models/cat';
 export class CatprofileComponent implements OnInit {
   public cat: Cat = null;
   public input: string;
+  public visible: boolean;
   cats: Cat[];
 
   constructor(private cs: GetNekoService) { }
 
   ngOnInit(): void {
+    this.getAllCatsFunc();
   }
   getCats(): void {
+    this.visible = false;
     this.cs.getCat(this.input).subscribe(
       (data) => {
         this.cat = data;
@@ -29,7 +32,8 @@ export class CatprofileComponent implements OnInit {
   }
 
 
-  getAllCats(): void {
+  getAllCatsFunc(): void {
+    this.visible = true;
     this.cs.getAllCats().subscribe(
       (data) => {
         console.log(data)
