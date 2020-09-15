@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GetNekoService } from '../services/getneko.service';
-import { Cat } from '../models/cat';
+import { GetNekoService } from '../../services/getneko.service';
+import { Cat } from '../../models/cat';
 
 @Component({
   selector: 'app-aboutus',
