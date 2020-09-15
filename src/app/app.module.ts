@@ -12,6 +12,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { CatprofileComponent } from './components/catprofile/catprofile.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CatprofileComponent } from './components/catprofile/catprofile.componen
     AboutusComponent,
     RegisterComponent,
     HomepageComponent,
-    CatprofileComponent
+    CatprofileComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
