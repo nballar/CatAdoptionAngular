@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { CatprofileComponent } from './components/catprofile/catprofile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     AboutusComponent,
     RegisterComponent,
-    HomepageComponent
+    HomepageComponent,
+    CatprofileComponent
   ],
   imports: [
     BrowserModule,
