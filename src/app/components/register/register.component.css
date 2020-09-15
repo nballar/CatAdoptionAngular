@@ -1,25 +1,32 @@
 #colorblock0{
     background-color: #3f2914;
+    border-radius: 5px;
 }
 
 #colorblock1{
     background-color: #ffb3da;
+    border-radius: 5px;
 }
 
 #colorblock2{
     background-color: #3a3a3a;
+    border-radius: 5px;
 }
 
 #colorblock3{
     background-color: #80fdff;
+    border-radius: 5px;
 }
 
 .yellowtext{
     color: #ffe066;
 }
 
-/* *{
-    background-color: #3f2914;
-    padding: 10px;
-    border-radius: 5px;
-} */
+#register{
+    color: #ffe066;
+    border-color: #ffe066;
+}
+
+#userAge{
+    padding-left: 20px;
+}
