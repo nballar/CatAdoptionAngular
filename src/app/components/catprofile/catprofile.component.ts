@@ -10,6 +10,8 @@ import { Cat } from '../../models/cat';
 export class CatprofileComponent implements OnInit {
   public cat: Cat = null;
   public input: string;
+  cats: Cat[];
+
   constructor(private cs: GetNekoService) { }
 
   ngOnInit(): void {
@@ -34,7 +36,7 @@ export class CatprofileComponent implements OnInit {
         for (let c in data) {
           console.log(c);
         }
-        
+        this.cats = data;
       },
       () => {
         this.cat = null;
