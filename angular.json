@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "CatAdoptionAngular"
+    }
+  },
+  "defaultProject": "CatAdoptionAngular",
+  "cli": {
+    "analytics": "6b139a18-929e-48ab-9787-7cf1f9d24c1d"
+  }
 }
