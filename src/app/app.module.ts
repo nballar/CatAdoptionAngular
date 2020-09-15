@@ -27,11 +27,8 @@ import { CatprofileComponent } from './components/catprofile/catprofile.componen
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-<<<<<<< HEAD
-    FormsModule
-=======
+    FormsModule,
     HttpClientModule
->>>>>>> 28caf5cfbb4acfaf8df65b51318df10ccf7bb178
   ],
   providers: [],
   bootstrap: [AppComponent]
