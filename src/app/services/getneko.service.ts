@@ -14,4 +14,8 @@ export class GetNekoService {
 
     return this.http.get("https://api.neko-atsume.emshea.com/cats/" +id) as Observable<Cat>;
   }
+
+  getAllCats(): Observable<Cat> {
+    return this.http.get("https://api.neko-atsume.emshea.com/cats/") as Observable<Cat>;
+  }
 }
