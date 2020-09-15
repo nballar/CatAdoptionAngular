@@ -1,8 +1,25 @@
-*{
+#colorblock0{
+    background-color: #3f2914;
+}
+
+#colorblock1{
+    background-color: #ffb3da;
+}
+
+#colorblock2{
+    background-color: #3a3a3a;
+}
+
+#colorblock3{
+    background-color: #80fdff;
+}
+
+.yellowtext{
+    color: #ffe066;
+}
+
+/* *{
     background-color: #3f2914;
     padding: 10px;
     border-radius: 5px;
-}
-.colorblockA{
-    color: #ffe066;
-}
+} */
