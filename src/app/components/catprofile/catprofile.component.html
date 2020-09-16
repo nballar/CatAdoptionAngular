@@ -3,38 +3,15 @@
     <input class="col" type="text" [(ngModel)]="input" />
     <button class="btn btn-primary" (click)="getCats()">Favorite Cat?</button>
   </div>
-  <!--TABLE WILL NOT SHOW UNLESS TRUTHY VALUE-->
-  <!--
-  <table class="table" >
-    <thead>
-      <tr>
-        <th scope="col">Cat Image</th>
-        <th scope="col">Name</th>
-        <th scope="col">Desciption</th>
-        <th scope="col">Personality</th>
-        <th scope="col">Power Level</th>
-
-      </tr>
-    </thead>
-    <tbody >
-      <tr *ngFor="let cat of cats">
-        <td><img src="{{cat.CatImage}}" /></td>
-        <td>{{cat.CatName}}</td>
-        <td>{{cat.CatDescription}}</td>
-        <td>{{cat.CatPersonality}}</td>
-        <td>{{cat.CatPowerLevel}}</td>
-
-
-      </tr>
-    </tbody>
-  </table>
-    -->
-  <div *ngIf="visible">
+  <div >
     <div class="card" *ngFor="let cat of cats">
       <img src="{{cat.CatImage}}"  style="width:38%; height:50%;">
-      <h3>{{cat.CatName}}</h3>
+      <p *ngIf="hide" id="catId">{{cat.CatId}}</p>
+      <h3 id="catName">{{cat.CatName}}</h3>
       <p class="title">{{cat.CatDescription}} ({{cat.CatPersonality}})<br />
-      <span id="powerLevel"> Worth: {{cat.CatPowerLevel}} pts</span></p>
+      <span id="powerLevel"> Worth: {{cat.CatPowerLevel}} pts</span>
+      <button class="btn btn-primary btn-sm float-right" (click)="adopt()">Adopt</button>
+      </p>
     </div>
     <br />
   </div>
