@@ -18,7 +18,8 @@ const routes: Routes = [{
 },
 {
   path: 'catprofiles',
-  component: CatprofileComponent
+  component: CatprofileComponent,
+  canActivate:[AuthGuardService]
 },
 {
   path: 'register',
@@ -27,6 +28,7 @@ const routes: Routes = [{
 {
   path: 'homepage',
   component:HomepageComponent,
+  canActivate:[AuthGuardService]
 },
 {
   path:'logout',
