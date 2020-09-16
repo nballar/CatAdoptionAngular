@@ -11,6 +11,8 @@ export class CatprofileComponent implements OnInit {
   public cat: Cat = null;
   public input: string;
   public visible: boolean;
+  public hide: boolean = false;
+  public catId: String;
   cats: Cat[];
 
   constructor(private cs: GetNekoService) { }
@@ -37,9 +39,6 @@ export class CatprofileComponent implements OnInit {
     this.cs.getAllCats().subscribe(
       (data) => {
         console.log(data)
-        for (let c in data) {
-          console.log(c);
-        }
         this.cats = data;
       },
       () => {
@@ -47,5 +46,11 @@ export class CatprofileComponent implements OnInit {
         console.log("something went wrong");
       }
     )
+  }
+
+
+  adopt(): void {
+    //this.catId = document.getElementById("catId").innerText;
+    console.log(document.getElementById("catId").textContent);
   }
 }
