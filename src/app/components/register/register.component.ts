@@ -14,4 +14,8 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  onSave($event){
+    console.log("CLICKED", $event);
+  }
 }
