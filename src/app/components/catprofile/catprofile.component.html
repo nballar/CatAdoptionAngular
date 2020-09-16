@@ -2,15 +2,22 @@
   <div class="row">
     <input class="col" type="text" [(ngModel)]="input" />
     <button class="btn btn-primary" (click)="getCats()">Favorite Cat?</button>
+    <select id="sort-by" (change)="sort($event)">
+      <option value="" selected disabled hidden>Sort By</option>
+      <option value="None">None</option>
+      <option value="Low">Show Low to High Price</option>
+      <option value="High">Show High to Low Price</option>
+    </select>
   </div>
   <div >
+   
     <div class="card" *ngFor="let cat of cats">
       <img src="{{cat.CatImage}}"  style="width:38%; height:50%;">
-      <p *ngIf="hide" id="catId">{{cat.CatId}}</p>
-      <h3 id="catName">{{cat.CatName}}</h3>
+      <p *ngIf="hide" id="cat.CatId" value="{{cat.CatId}}">{{cat.CatId}}</p>
+      <h3 >{{cat.CatName}}</h3>
       <p class="title">{{cat.CatDescription}} ({{cat.CatPersonality}})<br />
-      <span id="powerLevel"> Worth: {{cat.CatPowerLevel}} pts</span>
-      <button class="btn btn-primary btn-sm float-right" (click)="adopt()">Adopt</button>
+      <span> Worth: {{cat.CatPowerLevel}} pts</span>
+      <button class="btn btn-primary btn-sm float-right" (click)="adopt()" >Adopt</button>
       </p>
     </div>
     <br />
