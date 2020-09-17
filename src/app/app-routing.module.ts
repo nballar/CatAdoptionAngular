@@ -7,6 +7,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const routes: Routes = [{
   path:'login',
@@ -34,6 +35,11 @@ const routes: Routes = [{
   path:'logout',
   component:LogoutComponent,
   canActivate:[AuthGuardService]
+},
+{
+  path:'profile',
+  component:UserProfileComponent
+  // canActivate:[AuthGuardService]
 }
 ];
 

@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { CatprofileComponent } from './components/catprofile/catprofile.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     RegisterComponent,
     HomepageComponent,
     CatprofileComponent,
-    LogoutComponent
+    LogoutComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
