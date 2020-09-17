@@ -14,7 +14,7 @@ export class AboutusComponent implements OnInit {
   catModel:Cat;
 
   ngOnInit(): void {
-    this.catSer.getCat("1").subscribe(
+    this.catSer.getCat("66").subscribe(
       data=>{
         this.catModel = data;
         console.log(this.catModel);

@@ -1,8 +1,9 @@
 <div class="container-fluid" id="colorblock1">
   <div class="yellow">
-    Username : <input type="text" class="loginText" name="username" [(ngModel)]="username">
-    Password : <input type="password" class="loginText" name="password" [(ngModel)]="password">
+    Username : <input type="text" class="loginText" placeholder="username" name="username" [(ngModel)]="username">
+    Password : <input type="password" class="loginText" placeholder="password" name="password" [(ngModel)]="password">
   </div>
-  <button (click)=checkLogin() class="btn btn-outline" id="login">Login</button>
-
+  <div class="loginButton">
+    <button (click)=checkLogin() class="btn btn-outline" id="login">Login</button>
   </div>
+</div>

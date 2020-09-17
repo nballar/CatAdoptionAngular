@@ -62,11 +62,18 @@ export class CatprofileComponent implements OnInit {
   adopt(id:string): void {
     this.adoptBool = !this.adoptBool;
     console.log("in adopt button");
-    //this.catId = document.getElementById("catId").innerText;
-    //console.log("cat id right ?: "+ this.cat.CatId);
-    //console.log("id of cat we adopt: " + <HTMLElement><unknown>document.getElementById("catId").innerText);
-    // let value= ((document.getElementById("catId") as HTMLInputElement).value)
-    console.log("cat id: " + ((document.getElementById("cat.CatId") as HTMLInputElement).value));
+    this.catId = id;
+    console.log("cat id: " + this.catId);
+    //so since this works all we need to do is pass this in to the service
+    /*
+       this.cs.updateCat(this.catId) ...
+       pass id to database and have method that stores id cat and adds it to User cat ID
+       //probably need a way to also send user ID with that
+       and it also marks cat: catid, adopted=true;
+       //then another function that gets all cats but takes out the one that is updated
+       //so method that checks if the cat is adopted or not.
+    */
+
   }
 
   sort(event: any) {

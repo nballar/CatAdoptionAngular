@@ -1,3 +1,7 @@
+*{
+    background-color: #3f2914;
+}
+
 #colorblock0{
     background-color: #3f2914;
     border-radius: 5px;
@@ -18,8 +22,25 @@
     border-radius: 5px;
 }
 
+.container-fluid{
+    background-color: #3f2914;
+    border-radius: 5px;
+}
+
 .yellowtext{
     color: #ffe066;
+}
+
+.container-fluid{
+    padding: 25px;
+}
+
+/* Trying to make my signup inputs brown like Nancy's. They turn white when clicked, which makes the yellow text ICKY.
+*/
+::placeholder:focus{
+    text-decoration-color: #3f2914;
+    color: #3f2914;
+    outline: #ffb3da;
 }
 
 #register{
@@ -30,3 +51,17 @@
 #userAge{
     padding-left: 20px;
 }
+
+#register:hover{
+    color: #3f2914;
+    background-color: #ffb3da;
+}
+
+::placeholder{
+    color: #ffe066;
+    opacity: 0.5;
+}
+
+/* This makes the buttons change color when the user hovers over them, making them easier to see.
+ * I really like accessibility, so if it's okay, I'd like to put little things like that around the site.
+*/
