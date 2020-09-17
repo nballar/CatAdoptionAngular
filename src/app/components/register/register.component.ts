@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
 
   onSave($event){
 
+
     // But hey, this part works now!!! I can log EVERYTHING without it breaking, yay!!!
     console.log("CLICKED", $event);
     console.log((document.getElementById("FirstName") as HTMLInputElement).value);
