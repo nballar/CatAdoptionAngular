@@ -9,6 +9,7 @@
 
 .yellow{
     color: #ffe066;
+    padding-top: 25px;
 }
 
 #login{
@@ -19,4 +20,8 @@
 #login:hover{
     color: #3f2914;
     background-color: #ffb3da;
+}
+
+#colorblock1{
+    padding-left: 25px;
 }

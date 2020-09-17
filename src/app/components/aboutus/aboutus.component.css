@@ -1,0 +1,12 @@
+*{
+    color: #ffe066;
+    padding: 10px;
+    padding-left: 15px;
+    /* padding-right: 15px; */
+}
+
+#TheBigOne{
+    background-color: #3f2914;
+    border-radius: 5px;
+    line-height: 180%;
+}
