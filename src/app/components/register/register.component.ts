@@ -13,7 +13,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSave($event){
-
     console.log("CLICKED", $event);
   }
 }
