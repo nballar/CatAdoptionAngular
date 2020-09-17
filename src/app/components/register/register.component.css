@@ -18,6 +18,11 @@
     border-radius: 5px;
 }
 
+.container-fluid{
+    background-color: #3f2914;
+    border-radius: 5px;
+}
+
 .yellowtext{
     color: #ffe066;
 }
@@ -30,3 +35,11 @@
 #userAge{
     padding-left: 20px;
 }
+
+#register:hover{
+    color: #3f2914;
+    background-color: #ffb3da;
+}
+/* This makes the buttons change color when the user hovers over them, making them easier to see.
+ * I really like accessibility, so if it's okay, I'd like to put little things like that around the site.
+*/
