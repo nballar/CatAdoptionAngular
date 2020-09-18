@@ -5,12 +5,10 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\catprofile",
-    "\\src\\app\\components\\login",
-    "\\src\\app\\components\\register",
     "\\src\\app\\services",
     "\\src\\assets",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\components\\login\\login.component.spec.ts",
+  "SelectedNode": "\\src\\app\\components\\catprofile\\catprofile.component.html",
   "PreviewInSolutionExplorer": false
 }
