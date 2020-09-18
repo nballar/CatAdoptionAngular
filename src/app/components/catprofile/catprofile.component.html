@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <input class="col" type="text" [(ngModel)]="input" />
+    <input class="col" type="text" [(ngModel)]="input" id="menuBar" />
     <button class="btn btn-primary" (click)="getCats()">Favorite Cat?</button>
     <select id="sort-by" (change)="sort($event)">
       <option value="" selected disabled hidden>Sort By</option>
@@ -9,6 +9,7 @@
       <option value="High">Show High to Low Price</option>
     </select>
   </div>
+  <br/>
   <div >
    
     <div class="card" *ngFor="let cat of cats">
