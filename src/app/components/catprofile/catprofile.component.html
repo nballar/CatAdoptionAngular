@@ -18,7 +18,7 @@
       <h3 >{{cat.CatName}}</h3>
       <p class="title">{{cat.CatDescription}} ({{cat.CatPersonality}})<br />
       <span> Worth: {{cat.CatPowerLevel}} pts</span>
-      <button class="btn btn-primary btn-sm float-right" (click)="adopt()" >Adopt</button>
+      <button class="btn btn-primary btn-sm float-right" ngDefaultControl (click)="adopt(cat.CatId)" >Adopt</button>
       </p>
     </div>
     <br />
