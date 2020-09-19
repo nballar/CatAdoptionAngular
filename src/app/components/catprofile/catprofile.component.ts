@@ -14,10 +14,14 @@ export class CatprofileComponent implements OnInit {
   public input: string;
   public visible: boolean;
   public hide: boolean = false;
-  public catId: string;
+  public catId: number;
+  public powerLevel: number;
+  public adoptionStatus: boolean;
   public adoptBool: boolean = false;
   
+  taken: boolean;
   cats: Cat[];
+  adoptedCats: Cat[];
 
   constructor(private cs: GetNekoService) { }
 
@@ -40,15 +44,28 @@ export class CatprofileComponent implements OnInit {
 
   getAllCatsFunc(): void {
     this.visible = true;
+    //method that gets all the cats in the backend (which are adopted)
+    //loop through that list and check against get all cats and if it
+    //is in the catAdopted list then do not display somehow
+
+    this.cs.getAdoptedCats().subscribe(
+      (data) => {
+        this.adoptedCats = data;
+      }
+    )
     this.cs.getAllCats().subscribe(
       (data) => {
         this.cats = data;
         console.log(data);
         for (let c in data) {
-          
-          if (this.adoptBool) {
-            console.log("id of cat: " + c);
-          }
+            for (let ca in this.adoptedCats) {
+              if (data[c].catid == data[ca].catid) {
+                this.taken = true;  
+              }
+            }
+          /*if (this.adoptBool) {
+            console.log("id of cat: " + data[c].catid);
+          }*/
         }
       },
       () => {
@@ -59,34 +76,31 @@ export class CatprofileComponent implements OnInit {
   }
 
 
-  adopt(id:string): void {
+  adopt(id: string, pl: string): void {
     this.adoptBool = !this.adoptBool;
     console.log("in adopt button");
-    this.catId = id;
-    console.log("cat id: " + this.catId);
-    //so since this works all we need to do is pass this in to the service
-    /*
-       this.cs.updateCat(this.catId) ...
-       pass id to database and have method that stores id cat and adds it to User cat ID
-       //probably need a way to also send user ID with that
-       and it also marks cat: catid, adopted=true;
-       //then another function that gets all cats but takes out the one that is updated
-       //so method that checks if the cat is adopted or not.
-    */
-
+    this.catId = Number(id);
+    this.powerLevel = Number(pl);
+    console.log("cat id: " + this.catId + " power level " + this.powerLevel);
+    let cat = new Cat(this.catId, this.powerLevel, null, true);
+    this.cs.updateCat(cat).subscribe(
+      (response: Cat) => {
+        this.cat = response;
+      }
+    )
   }
 
   sort(event: any) {
     switch (event.target.value) {
       case "Low":
         {
-          this.cats = this.cats.sort((low, high) => low.CatPowerLevel - high.CatPowerLevel);
+          this.cats = this.cats.sort((low, high) => low.powerLevel - high.powerLevel);
           break;
         }
 
       case "High":
         {
-          this.cats = this.cats.sort((low, high) => high.CatPowerLevel - low.CatPowerLevel);
+          this.cats = this.cats.sort((low, high) => high.powerLevel - low.powerLevel);
           break;
         }
       case "None":

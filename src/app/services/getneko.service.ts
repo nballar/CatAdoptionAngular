@@ -19,4 +19,13 @@ export class GetNekoService {
     return this.http.get("https://api.neko-atsume.emshea.com/cats/") as Observable<Cat[]>;
   }
 
+  updateCat(c: Cat): Observable<Cat> {
+    return this.http.put<Cat>("http://localhost:8069/catadoption/cats", c) as Observable<Cat>;
+  }
+
+
+  getAdoptedCats(): Observable<Cat[]> {
+    //change value in get adopties in backend to catAdopties
+    return this.http.get<Cat[]>("http://localhost:8069/catadoption/catAdopties") as Observable<Cat[]>;
+  }
 }

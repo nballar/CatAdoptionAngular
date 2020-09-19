@@ -13,13 +13,16 @@
   <div >
    
     <div class="card" *ngFor="let cat of cats">
-      <img src="{{cat.CatImage}}"  style="width:28%; height:30%;">
-      <p *ngIf="hide" id="cat.CatId" value="{{cat.CatId}}">{{cat.CatId}}</p>
-      <h3 >{{cat.CatName}}</h3>
-      <p class="title">{{cat.CatDescription}} ({{cat.CatPersonality}})<br />
-      <span> Worth: {{cat.CatPowerLevel}} pts</span>
-      <button class="btn btn-primary btn-sm float-right" ngDefaultControl (click)="adopt(cat.CatId)" >Adopt</button>
-      </p>
+     <!-- <div *ngIf="!taken">-->
+        <img src="{{cat.CatImage}}" style="width:28%; height:30%;">
+        <p *ngIf="hide" id="cat.CatId" value="{{cat.CatId}}">{{cat.CatId}}</p>
+        <h3>{{cat.CatName}}</h3>
+        <p class="title">
+          {{cat.CatDescription}} ({{cat.CatPersonality}})<br />
+          <span id="cat.CatPowerLevel">Worth: {{cat.CatPowerLevel}} pts</span>
+          <button class="btn btn-primary btn-sm float-right" ngDefaultControl (click)="adopt(cat.CatId, cat.CatPowerLevel)">Adopt</button>
+        </p>
+      <!--</div>-->
     </div>
     <br />
   </div>

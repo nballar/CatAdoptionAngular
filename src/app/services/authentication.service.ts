@@ -20,6 +20,8 @@ export class AuthenticationService {
     console.log("in authenticate");
     let ud = new Userdto(username, password);
     return this.http.post<Userdto>("http://localhost:8069/catadoption/login", ud);
+    //set the rreturned user to a variable and store that globably in the project to be accessed
+    //by user profile and cat profile
   }
 
   isUserLoggedIn() {

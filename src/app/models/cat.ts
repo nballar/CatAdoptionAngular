@@ -1,33 +1,15 @@
-export class Cat {
-  CatId:string;
-  CatName:string;
-  CatDescription:string;
-  CatPersonality:string;
-  CatPowerLevel:any;
-  CatType:string;
-  Memento:string;
-  CatImage:string;
-  MementoImage:string;
+import { User } from './user';
 
-  constructor(
-        CatId:string,
-        CatName:string,
-        CatDescription:string,
-        CatPersonality:string,
-        CatPowerLevel:any,
-        CatType:string,
-        Memento:string,
-        CatImage:string,
-        MementoImage:string)
-        {
-            this.CatId = CatId;
-            this.CatName = CatName;
-            this.CatDescription = CatDescription;
-            this.CatPersonality = CatPersonality;
-            this.CatPowerLevel = CatPowerLevel;
-            this.CatType = CatType;
-            this.Memento = Memento;
-            this.CatImage = CatImage;
-            this.MementoImage = MementoImage;
-        }
+export class Cat {
+  catid:number;
+  powerLevel: number;
+  owner: User;
+  adoptionStatus: boolean;
+
+  constructor(catid: number, powerLevel: number, owner: User, adoptionStatus: boolean) {
+    this.catid = catid;
+    this.powerLevel = powerLevel;
+    this.owner = owner;
+    this.adoptionStatus = adoptionStatus;
+  }
 }
