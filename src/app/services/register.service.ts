@@ -12,6 +12,6 @@ export class RegisterService {
 
   addUser(u:User): Observable<User> {
     let body:User = u;
-    return this.http.post<User>('http://localhost:8069/catadoption/user', body);
+    return this.http.post<User>('http://localhost:8999/catadoption/user', body);
   }
 }
