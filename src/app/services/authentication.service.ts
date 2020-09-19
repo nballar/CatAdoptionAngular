@@ -17,13 +17,13 @@ export class AuthenticationService {
     // } else {
     //   return false;
     // }
+    console.log("in authenticate");
     let ud = new Userdto(username, password);
     return this.http.post<Userdto>("http://localhost:8069/catadoption/login", ud);
   }
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username')
-    console.log(!(user === null))
     return !(user === null)
   }
 

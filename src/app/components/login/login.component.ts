@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Userdto } from 'src/app/models/userdto';
 import { AuthenticationService } from '../../services/authentication.service';
  
 @Component({
@@ -9,10 +10,11 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
  
-  username = 'neko'
-  password = ''
-  invalidLogin = false
- 
+  username = '';
+  password = '';
+  invalidLogin = false;
+  ud: Userdto;
+
   constructor(private router: Router,
     private loginservice: AuthenticationService) { }
  
@@ -20,12 +22,11 @@ export class LoginComponent implements OnInit {
   }
  
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.router.navigate(['profile'])
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
+    this.loginservice.authenticate(this.username, this.password).subscribe(
+      (response: Userdto) => {
+        this.ud = response;
+      }
+    );
   }
- 
+  
 }
