@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { Userdto } from '../models/userdto';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  authenticate(username, password) {
+  authenticate(username, password): Observable<User> {
     // if (username === "neko" && password === "atsume") {
     //   sessionStorage.setItem('username', username)
     //   return true;
@@ -19,7 +20,7 @@ export class AuthenticationService {
     // }
     console.log("in authenticate");
     let ud = new Userdto(username, password);
-    return this.http.post<User>("http://localhost:8999/catadoption/login", ud);
+    return this.http.post<User>("http://localhost:8999/catadoption/login", ud) as Observable<User>;
     //set the rreturned user to a variable and store that globably in the project to be accessed
     //by user profile and cat profile
   }

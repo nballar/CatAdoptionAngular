@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   username = '';
   password = '';
   invalidLogin = false;
-  user: User;
+  user: number;
 
   constructor(private router: Router,
     private loginservice: AuthenticationService) { }
@@ -25,7 +25,11 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     this.loginservice.authenticate(this.username, this.password).subscribe(
       (response: User) => {
-        this.user = response;
+        console.log(response);
+        /*let u :User = JSON.parse('response');
+        console.log(u.uId);*/
+        this.user = response.userid;
+       // console.log(this.user);
         sessionStorage.setItem('user', JSON.stringify(this.user));
         console.log(sessionStorage);
         this.router.navigate(['profile']);

@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { GetNekoService } from '../../services/getneko.service';
 import { Cat } from '../../models/cat';
+import { User } from '../../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catprofile',
@@ -15,18 +17,21 @@ export class CatprofileComponent implements OnInit {
   public visible: boolean;
   public hide: boolean = false;
   public catId: number;
-  public powerLevel: number;
+  public pointPrice: number;
   public adoptionStatus: boolean;
   public adoptBool: boolean = false;
+
+  user: number;
   
   taken: boolean;
   cats: Cat[];
   adoptedCats: Cat[];
 
-  constructor(private cs: GetNekoService) { }
+  constructor(private cs: GetNekoService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllCatsFunc();
+    
   }
   getCats(): void {
     this.visible = false;
@@ -80,27 +85,36 @@ export class CatprofileComponent implements OnInit {
     this.adoptBool = !this.adoptBool;
     console.log("in adopt button");
     this.catId = Number(id);
-    this.powerLevel = Number(pl);
-    console.log("cat id: " + this.catId + " power level " + this.powerLevel);
-    let cat = new Cat(this.catId, this.powerLevel, null, true);
+    this.pointPrice = Number(pl);
+    console.log("cat id: " + this.catId + " power level " + this.pointPrice );
+    //now we can fill the null part with the correct user ID==> user?
+    //except power level was not persisted correctly
+    let user = Number(sessionStorage.getItem('user'));
+    console.log(user);
+    let cat = new Cat(this.catId, this.pointPrice, user, true);
+    console.log(cat);
     this.cs.updateCat(cat).subscribe(
       (response: Cat) => {
         this.cat = response;
       }
     )
+    //after they adopt the cat I think we want it to go to user profile
+    //to show that in the profile that user owns that cat
+    this.router.navigate(['profile']);
+    
   }
 
   sort(event: any) {
     switch (event.target.value) {
       case "Low":
         {
-          this.cats = this.cats.sort((low, high) => low.powerLevel - high.powerLevel);
+          this.cats = this.cats.sort((low, high) => low.pointPrice - high.pointPrice);
           break;
         }
 
       case "High":
         {
-          this.cats = this.cats.sort((low, high) => high.powerLevel - low.powerLevel);
+          this.cats = this.cats.sort((low, high) => high.pointPrice - low.pointPrice);
           break;
         }
       case "None":

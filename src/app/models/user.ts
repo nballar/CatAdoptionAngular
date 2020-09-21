@@ -2,7 +2,7 @@ import { Cat } from './cat';
 import { Task } from './task';
 
 export class User {
-    public uId:number;
+    public userid:number;
     public username:String;
     public password:String;
     public firstName:String;
@@ -14,7 +14,7 @@ export class User {
     public tasks:Array<Task>
 
     constructor(
-        uId:number,
+        userid:number,
         username:String,
         password:String,
         firstName:String,
@@ -25,7 +25,7 @@ export class User {
         cats:Array<Cat>,
         tasks:Array<Task>)
         {
-            this.uId=uId,
+            this.userid = userid,
             this.username=username,
             this.password=password,
             this.firstName=firstName,

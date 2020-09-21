@@ -2,13 +2,13 @@ import { User } from './user';
 
 export class Cat {
   catid:number;
-  powerLevel: number;
-  owner: User;
+  pointPrice: number;
+  owner: number;
   adoptionStatus: boolean;
 
-  constructor(catid: number, powerLevel: number, owner: User, adoptionStatus: boolean) {
+  constructor(catid: number, pointPrice: number, owner: number, adoptionStatus: boolean) {
     this.catid = catid;
-    this.powerLevel = powerLevel;
+    this.pointPrice = pointPrice;
     this.owner = owner;
     this.adoptionStatus = adoptionStatus;
   }
