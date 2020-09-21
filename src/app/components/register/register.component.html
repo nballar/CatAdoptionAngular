@@ -31,8 +31,27 @@
                         <br/>
                         <input type="number" class="form-control" placeholder="Age" id="userAge" min="18"> <!--setting min age to 18 for adoptions Need to enforce this with TypeScript.-->
                         </div>
+                        <!-- <div *ngFor="let p of catprofilepic">
+                            <span>
+                                <input type="image" src={{p}} alt="profilePic1" width="48" height="48" id="profilePic1">
+                                <input type="radio" class="radios" id="radio{{catprofilepic.indexOf(p)}}" value={{catprofilepic.indexOf(p)}}>
+                            </span>
+                        </div> -->
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Dropdown button
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item">0</a>
+                                  <a class="dropdown-item">1</a>
+                                  <a class="dropdown-item">2</a>
+                                  <a class="dropdown-item">3</a>
+                                  <a class="dropdown-item">4</a>
+                                </div>
+                            </div>
                     </div>
-                <button type="submit" class="btn btn-outline form-group" id="register" (click)="onSave($event)">Add me!</button>
+                <button type="submit" class="btn btn-outline form-group" id="register" ngDefaultControl (click)="onSave($event)">Add me!</button>
             <!-- </form> -->
         </div>
     </div>
