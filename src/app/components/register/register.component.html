@@ -31,25 +31,21 @@
                         <br/>
                         <input type="number" class="form-control" placeholder="Age" id="userAge" min="18"> <!--setting min age to 18 for adoptions Need to enforce this with TypeScript.-->
                         </div>
-                        <!-- <div *ngFor="let p of catprofilepic">
-                            <span>
-                                <input type="image" src={{p}} alt="profilePic1" width="48" height="48" id="profilePic1">
-                                <input type="radio" class="radios" id="radio{{catprofilepic.indexOf(p)}}" value={{catprofilepic.indexOf(p)}}>
-                            </span>
-                        </div> -->
+                        <div *ngFor="let p of catprofilepic">
+                          <img src={{p}} style="width 100px; height: 50px">
+                        </div>
 
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Dropdown button
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item">0</a>
-                                  <a class="dropdown-item">1</a>
-                                  <a class="dropdown-item">2</a>
-                                  <a class="dropdown-item">3</a>
-                                  <a class="dropdown-item">4</a>
-                                </div>
-                            </div>
+                         <div class="form-group">
+                          <label for="profileSelection">Select icon:</label>
+                          <select class="form-control" id="profileSelection">
+                            <option value=0>Cocoa</option>
+                            <option value=1>Dottie</option>
+                            <option value=2>Gabriel</option>
+                            <option value=3>Ginger</option>
+                            <option value=4>Marshmallow</option>
+                            <option value=6>Peaches</option>
+                          </select>
+                        </div>
                     </div>
                 <button type="submit" class="btn btn-outline form-group" id="register" ngDefaultControl (click)="onSave($event)">Add me!</button>
             <!-- </form> -->

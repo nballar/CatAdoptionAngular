@@ -19,7 +19,12 @@ export class RegisterComponent implements OnInit {
 
   constructor(private rs:RegisterService) { }
 
-  // catprofilepic = ["../../../assets/cocoa.png", "../../../assets/dottie.png", "../../../assets/gabriel.png", "../../../assets/ginger.png", "../../../assets/marshmallow.png", "../../../assets/peaches_body.png"];
+  catprofilepic = ["../../../assets/cocoa.png",
+                  "../../../assets/dottie.png",
+                  "../../../assets/gabriel.png",
+                  "../../../assets/ginger.png",
+                  "../../../assets/marshmallow.png",
+                  "../../../assets/peaches_body.png"];
 
   ngOnInit(): void {
   }
@@ -34,9 +39,11 @@ export class RegisterComponent implements OnInit {
     this.username = (document.getElementById("inputUsername") as HTMLInputElement).value;
     this.password = (document.getElementById("inputPassword4") as HTMLInputElement).value;
     this.age =+ (document.getElementById("userAge") as HTMLInputElement).value;
-    // let pic = ((document.getElementById("radio{{catprofilepic.indexOf(p)}}") as HTMLInputElement).value);
 
-    let u = new User(0, this.username, this.password, this.firstName, this.lastName, null, this.age, 10, null, null)
+    let e = (document.getElementById("profileSelection") as HTMLInputElement).value;
+    let profile = this.catprofilepic[e];
+
+    let u = new User(0, this.username, this.password, this.firstName, this.lastName, profile, this.age, 10, null, null)
     // this.rs.addUser(u).subscribe(
     //   (response:User) =>{
     //     this.user = response;
