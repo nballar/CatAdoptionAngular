@@ -25,6 +25,9 @@ export class AuthenticationService {
     //by user profile and cat profile
   }
 
+  update(user): Observable<User> {
+    return this.http.put<User>("http://localhost:8999/catadoption/user", user) as Observable<User>;
+  }
   isUserLoggedIn() {
     let user = sessionStorage.getItem('user')
     return !(user === null)

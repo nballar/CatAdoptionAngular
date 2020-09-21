@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   password = '';
   invalidLogin = false;
   user: number;
+  userTemp: User;
 
   constructor(private router: Router,
     private loginservice: AuthenticationService) { }
@@ -25,16 +26,22 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     this.loginservice.authenticate(this.username, this.password).subscribe(
       (response: User) => {
+        this.userTemp = response;
+        response.points += 10;
         console.log(response);
-        /*let u :User = JSON.parse('response');
-        console.log(u.uId);*/
-        this.user = response.userid;
-       // console.log(this.user);
+        this.loginservice.update(response).subscribe();
+
+
+        this.user = this.userTemp.userid;
+        // console.log(this.user);
         sessionStorage.setItem('user', JSON.stringify(this.user));
         console.log(sessionStorage);
         this.router.navigate(['profile']);
       }
     );
-  }
-  
+    /*let u :User = JSON.parse('response');
+       console.log(u.uId);*/
+    
+  }      
+     
 }
