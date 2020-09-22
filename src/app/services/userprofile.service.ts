@@ -13,12 +13,12 @@ export class UserprofileService {
 
 
   getUser(id:Number): Observable<User> {
-    return this.http.get<User>("http://localhost:8999/catadoption/user/" + id) as Observable<User>
+    return this.http.get<User>("http://ec2-18-191-238-176.us-east-2.compute.amazonaws.com:8999/catadoption/user/" + id) as Observable<User>
   }
 
   addTask(t:Task): Observable<Task>{
     //t.doer.userid = Number(sessionStorage.getItem("user"));
-    return this.http.post("http://localhost:8999/catadoption/task", t) as Observable<Task>
+    return this.http.post("http://ec2-18-191-238-176.us-east-2.compute.amazonaws.com:8999/catadoption/task", t) as Observable<Task>
   }
 
 }

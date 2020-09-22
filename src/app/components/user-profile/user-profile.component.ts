@@ -25,13 +25,14 @@ export class UserProfileComponent implements OnInit {
     this.us.getUser(this.userId).subscribe(
       (data) => {
         this.user = data;
-        console.log(this.user);
-        console.log(this.user.tasks);
-        console.log("in tasks");
+        // console.log(this.user);
+        // console.log(this.user.tasks);
+        // console.log("in tasks");
         this.tasks = this.user.tasks;
-        console.log(this.tasks);
+        // console.log(this.tasks);
+        console.log(this.user.profileImage);
       })
-    
+
   }
 
   addTask(){
