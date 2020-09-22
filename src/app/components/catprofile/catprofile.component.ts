@@ -48,7 +48,7 @@ export class CatprofileComponent implements OnInit {
 
 
   getAllCatsFunc(): void {
-    this.visible = true;
+    
     //method that gets all the cats in the backend (which are adopted)
     //loop through that list and check against get all cats and if it
     //is in the catAdopted list then do not display somehow
@@ -61,11 +61,19 @@ export class CatprofileComponent implements OnInit {
     this.cs.getAllCats().subscribe(
       (data) => {
         this.cats = data;
+        this.taken = false;
         console.log(data);
-        for (let c in data) {
-            for (let ca in this.adoptedCats) {
-              if (data[c].catid == data[ca].catid) {
-                this.taken = true;  
+        for (let c in this.cats) {
+           //console.log(c);
+          for (let ca in this.adoptedCats) {
+           // console.log(ca);
+            if (c == ca) {
+              console.log("this cat " + c + " is adopted and should be hidden");
+              //does not match the id in the database like 1 and 2 are adopted which seem to be 0/1 in api
+              //which is correct
+              console.log(this.taken);
+              this.taken = true;
+              console.log(this.taken);
               }
             }
           /*if (this.adoptBool) {
@@ -100,7 +108,7 @@ export class CatprofileComponent implements OnInit {
     )
     //after they adopt the cat I think we want it to go to user profile
     //to show that in the profile that user owns that cat
-    this.router.navigate(['profile']);
+    //this.router.navigate(['profile']);
     
   }
 
