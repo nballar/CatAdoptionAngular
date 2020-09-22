@@ -1,13 +1,18 @@
-export class Task {
-    public tId:number;
-    public name:String;
-    public status:boolean;
-    public frequency:number;
+import { User } from './user';
 
-    constructor(tId:number, name:String, status:boolean, frequency:number){
-        this.tId=tId,
-        this.name=name,
-        this.status=status,
-        this.frequency=frequency
+export class Task {
+    public taskid:number;
+    public description:String;
+    public completionStatus:boolean;
+    public frequency:number;
+    public doer: User;
+
+    constructor(description:String, completionStatus:boolean, frequency:number, doer: User){
+        this.description=description,
+        this.completionStatus=completionStatus,
+        this.frequency=frequency,
+        this.doer=doer
     }
+
+    
 }

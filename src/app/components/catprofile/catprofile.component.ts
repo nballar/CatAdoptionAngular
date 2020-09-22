@@ -97,7 +97,7 @@ export class CatprofileComponent implements OnInit {
     console.log("cat id: " + this.catId + " power level " + this.pointPrice );
     //now we can fill the null part with the correct user ID==> user?
     //except power level was not persisted correctly
-    let user = Number(sessionStorage.getItem('user'));
+    let user = Number(sessionStorage.getItem('userid'));
     console.log(user);
     let cat = new Cat(this.catId, this.pointPrice, user, true);
     console.log(cat);

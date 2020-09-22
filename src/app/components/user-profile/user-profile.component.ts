@@ -11,7 +11,9 @@ import { Task } from '../../models/task';
 export class UserProfileComponent implements OnInit {
   userId: Number;
   user: User;
+  task: Task;
   tasks: Task[];
+  input: String;
   constructor(private us: UserprofileService) { }
 
   ngOnInit(): void {
@@ -19,7 +21,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   getUserObj() {
-    this.userId = Number(sessionStorage.getItem('user'));
+    this.userId = Number(sessionStorage.getItem('userid'));
     this.us.getUser(this.userId).subscribe(
       (data) => {
         this.user = data;
@@ -32,7 +34,12 @@ export class UserProfileComponent implements OnInit {
     
   }
 
-  addTask($event){
+  addTask(){
     console.log("CLICK MEH!");
+    //this.user = sessionStorage.getItem("user"));
+
+    this.task = new Task(this.input, false, 1, null);
+    console.log(this.task);
+    this.us.addTask(this.task).subscribe();
   }
 }

@@ -12,8 +12,8 @@
 <div class="container-fluid">
   <h3>Tasks I Need To Get To:</h3>
   <div>
-    <input class="input" type="text" placeholder="description" id="litInput"/>
-    <button class="btn btn-light" id="litButton" (click)="addTask($event)">Add Task</button>
+    <input class="input" type="text" placeholder="description" id="litInput" [(ngModel)]="input"/>
+    <button class="btn btn-light" id="litButton" (click)="addTask()">Add Task</button>
   </div>
   <div class="grid-container">
     <div class="userTask" *ngFor="let t of tasks">
