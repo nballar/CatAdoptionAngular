@@ -3,6 +3,7 @@ import { GetNekoService } from '../../services/getneko.service';
 import { Cat } from '../../models/cat';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
+import { UserprofileService } from '../../services/userprofile.service';
 
 @Component({
   selector: 'app-catprofile',
@@ -21,13 +22,15 @@ export class CatprofileComponent implements OnInit {
   public adoptionStatus: boolean;
   public adoptBool: boolean = false;
 
-  user: number;
+  userid: number;
+  user: string;
+  userpts: number;
   
   taken: boolean;
   cats: Cat[];
   adoptedCats: Cat[];
 
-  constructor(private cs: GetNekoService, private router: Router) { }
+  constructor(private cs: GetNekoService, private router: Router, private us: UserprofileService) { }
 
   ngOnInit(): void {
     this.getAllCatsFunc();
@@ -95,21 +98,34 @@ export class CatprofileComponent implements OnInit {
     this.catId = Number(id);
     this.pointPrice = Number(pl);
     console.log("cat id: " + this.catId + " power level " + this.pointPrice );
-    //now we can fill the null part with the correct user ID==> user?
-    //except power level was not persisted correctly
-    let user = Number(sessionStorage.getItem('userid'));
-    console.log(user);
-    let cat = new Cat(this.catId, this.pointPrice, user, true);
-    console.log(cat);
-    this.cs.updateCat(cat).subscribe(
-      (response: Cat) => {
-        this.cat = response;
-      }
-    )
-    //after they adopt the cat I think we want it to go to user profile
-    //to show that in the profile that user owns that cat
-    //this.router.navigate(['profile']);
-    
+    //check if user has enough points to adopt
+    let userid = Number(sessionStorage.getItem('userid'));
+    let user = sessionStorage.getItem('user');
+    let userObj = JSON.parse(user);
+    this.userpts = userObj.points;
+
+    //check points os user against cost;
+    if (this.pointPrice != this.userpts) {
+      alert("you do not have enough points to adopt this kitty. ");
+      //go back to user profile ? maybe or just refresh ?
+
+    }
+    else {
+
+        let cat = new Cat(this.catId, this.pointPrice, userid, true);
+        console.log(cat);
+        this.cs.updateCat(cat).subscribe(
+          (response: Cat) => {
+            this.cat = response;
+          }
+      )
+      this.userpts -= this.pointPrice;
+
+      this.us.updateUser(userObj).subscribe();
+        //after they adopt the cat I think we want it to go to user profile
+        //to show that in the profile that user owns that cat
+        //this.router.navigate(['profile']);
+    }
   }
 
   sort(event: any) {
