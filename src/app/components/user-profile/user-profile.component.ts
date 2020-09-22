@@ -31,4 +31,8 @@ export class UserProfileComponent implements OnInit {
       })
     
   }
+
+  addTask($event){
+    console.log("CLICK MEH!");
+  }
 }
