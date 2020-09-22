@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
     console.log("CLICKED", $event);
 
     this.firstName = (document.getElementById("FirstName") as HTMLInputElement).value;
-    this.lastName = (document.getElementById("FirstName") as HTMLInputElement).value;
+    this.lastName = (document.getElementById("LastName") as HTMLInputElement).value;
     this.username = (document.getElementById("inputUsername") as HTMLInputElement).value;
     this.password = (document.getElementById("inputPassword4") as HTMLInputElement).value;
     this.age =+ (document.getElementById("userAge") as HTMLInputElement).value;
