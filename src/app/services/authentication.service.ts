@@ -28,6 +28,7 @@ export class AuthenticationService {
   update(user): Observable<User> {
     return this.http.put<User>("http://localhost:8999/catadoption/user", user) as Observable<User>;
   }
+  
   isUserLoggedIn() {
     let user = sessionStorage.getItem('user')
     return !(user === null)
