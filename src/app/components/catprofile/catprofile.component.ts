@@ -4,6 +4,8 @@ import { Cat } from '../../models/cat';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
 import { UserprofileService } from '../../services/userprofile.service';
+import { Catapi } from '../../models/catapi';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-catprofile',
@@ -22,21 +24,23 @@ export class CatprofileComponent implements OnInit {
   public adoptionStatus: boolean;
   public adoptBool: boolean = false;
 
+  powerLevel: number;
+
   userid: number;
   user: string;
   userpts: number;
   
   taken: boolean;
-  cats: Cat[];
+  cats: Catapi[];
   adoptedCats: Cat[];
 
-  constructor(private cs: GetNekoService, private router: Router, private us: UserprofileService) { }
+  constructor(private cs: GetNekoService, private router: Router, private as: AuthenticationService) { }
 
   ngOnInit(): void {
     this.getAllCatsFunc();
     
   }
-  getCats(): void {
+  /*getCats(): void {
     this.visible = false;
     this.cs.getCat(this.input).subscribe(
       (data) => {
@@ -47,7 +51,7 @@ export class CatprofileComponent implements OnInit {
         console.log("something went wrong");
       }
     )
-  }
+  }*/
 
 
   getAllCatsFunc(): void {
@@ -65,15 +69,14 @@ export class CatprofileComponent implements OnInit {
       (data) => {
         this.cats = data;
         this.taken = false;
-        console.log(data);
+        //console.log(data);
+        //console.log(this.adoptedCats);
         for (let c in this.cats) {
-           //console.log(c);
+          //console.log("cat in api: " +this.cats[c].CatId);
           for (let ca in this.adoptedCats) {
-           // console.log(ca);
-            if (c == ca) {
+            //console.log("cat in db: " +this.adoptedCats[ca].catid);
+            if (Number(this.cats[c].CatId) == this.adoptedCats[ca].catid) {
               console.log("this cat " + c + " is adopted and should be hidden");
-              //does not match the id in the database like 1 and 2 are adopted which seem to be 0/1 in api
-              //which is correct
               console.log(this.taken);
               this.taken = true;
               console.log(this.taken);
@@ -103,12 +106,10 @@ export class CatprofileComponent implements OnInit {
     let user = sessionStorage.getItem('user');
     let userObj = JSON.parse(user);
     this.userpts = userObj.points;
-
-    //check points os user against cost;
-    if (this.pointPrice != this.userpts) {
+    console.log(this.userpts);
+    //check points of user against cost;
+    if (this.pointPrice > this.userpts) {
       alert("you do not have enough points to adopt this kitty. ");
-      //go back to user profile ? maybe or just refresh ?
-
     }
     else {
 
@@ -119,26 +120,23 @@ export class CatprofileComponent implements OnInit {
             this.cat = response;
           }
       )
-      this.userpts -= this.pointPrice;
-
-      this.us.updateUser(userObj).subscribe();
-        //after they adopt the cat I think we want it to go to user profile
-        //to show that in the profile that user owns that cat
-        //this.router.navigate(['profile']);
+      userObj.points -= this.pointPrice;
+      this.as.update(userObj).subscribe();
+        this.router.navigate(['profile']);
     }
   }
 
   sort(event: any) {
     switch (event.target.value) {
       case "Low":
-        {
-          this.cats = this.cats.sort((low, high) => low.pointPrice - high.pointPrice);
+        {         
+          this.cats = this.cats.sort((low, high) => Number(low.CatPowerLevel) - Number(high.CatPowerLevel));
           break;
         }
 
       case "High":
         {
-          this.cats = this.cats.sort((low, high) => high.pointPrice - low.pointPrice);
+          this.cats = this.cats.sort((low, high) => Number(high.CatPowerLevel) - Number(low.CatPowerLevel));
           break;
         }
       case "None":
