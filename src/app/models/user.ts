@@ -7,7 +7,7 @@ export class User {
     public password:String;
     public firstName:String;
     public lastName:String;
-    public profilePic:String;
+    public profileImage:String;
     public age:number;
     public points:number;
     public cats:Array<Cat>
@@ -19,7 +19,7 @@ export class User {
         password:String,
         firstName:String,
         lastName:String,
-        profilePic:String,
+        profileImage:String,
         age:number,
         points:number,
         cats:Array<Cat>,
@@ -30,7 +30,7 @@ export class User {
             this.password=password,
             this.firstName=firstName,
             this.lastName=lastName,
-            this.profilePic=profilePic,
+            this.profileImage=profileImage,
             this.age=age,
             this.points=points,
             this.cats=cats,

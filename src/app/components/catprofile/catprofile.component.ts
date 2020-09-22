@@ -88,7 +88,7 @@ export class CatprofileComponent implements OnInit {
     )
   }
 
-
+  //with this method, do we want to do an if statement that checks if the user had enough points to adopt the cat?-Nancy
   adopt(id: string, pl: string): void {
     this.adoptBool = !this.adoptBool;
     console.log("in adopt button");
