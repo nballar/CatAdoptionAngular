@@ -4,9 +4,14 @@
   <p id="username">{{user.username}}</p>
   <p id="firstName">{{user.firstName}}</p>
   <p id="userAge">{{user.age}}</p>
+  <p id="userPoints">points: {{user.points}}</p>
 </div>
-<div>
-  <button></button>
+<div class="container">
+  <h3>Cats I Have Adopted:</h3>
+  <div class="grid-container" *ngFor="let c of ownedCats">
+    <img src={{c.img}} alt="">
+    <p>{{c.name}}</p>
+  </div>
 
 </div>
 <div class="container-fluid">

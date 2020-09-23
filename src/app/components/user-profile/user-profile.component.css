@@ -1,12 +1,15 @@
-#profilePicture{
+#profileImage{
+  float:left;
+    border: 5px solid black;
+    padding: 2px;
+    margin:10px;
+    background-color: #3f2914;
+    border-radius: 5px;
+}
+img{
   height: 10%;
   width: 10%;
-  float:left;
-  border: 5px solid black;
-  padding: 2px;
-  margin:10px;
-  background-color: #3f2914;
-  border-radius: 5px;
+
 }
 
 .grid-container{

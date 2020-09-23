@@ -11,9 +11,9 @@ export class GetNekoService {
 
   constructor(private http:HttpClient) { }
 
-  getCat(id:string): Observable<Cat>{
+  getCat(id:string): Observable<any>{
 
-    return this.http.get("https://api.neko-atsume.emshea.com/cats/" +id) as Observable<Cat>;
+    return this.http.get("https://api.neko-atsume.emshea.com/cats/" +id) as Observable<any>;
   }
 
   getAllCats(): Observable<Catapi[]> {
