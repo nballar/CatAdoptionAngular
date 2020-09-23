@@ -121,8 +121,14 @@ export class CatprofileComponent implements OnInit {
           }
       )
       userObj.points -= this.pointPrice;
-      this.as.update(userObj).subscribe();
-        this.router.navigate(['profile']);
+      this.as.update(userObj).subscribe(
+        (data) => {
+          sessionStorage.removeItem('user');
+          let user = sessionStorage.setItem('user', JSON.stringify(userObj));
+          console.log(user);
+        }
+    );
+      this.router.navigate(['profile']);
     }
   }
 

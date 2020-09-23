@@ -50,11 +50,11 @@ export class UserProfileComponent implements OnInit {
 
   addTask(){
     console.log("CLICK MEH!");
-    //this.user = sessionStorage.getItem("user"));
-
-    this.task = new Task(this.input, false, 1, null);
+    this.user = JSON.parse(sessionStorage.getItem("user"));
+    this.task = new Task(this.input, false, 1, this.user);
     console.log(this.task);
     this.us.addTask(this.task).subscribe();
+    this.getUserObj();
   }
 
   showCats(){

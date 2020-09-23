@@ -10,8 +10,8 @@
   <br/>
   <div >
    
-    <div class="card" *ngFor="let cat of cats">
-      <div *ngIf="taken">
+    <div class="collapse card" *ngFor="let cat of cats">
+      <div  *ngIf="taken; else elseBlock">
         <img src="{{cat.CatImage}}" style="width:28%; height:30%;">
         <p *ngIf="hide" id="cat.CatId" value="{{cat.CatId}}">{{cat.CatId}}</p>
         <h3>{{cat.CatName}}</h3>
