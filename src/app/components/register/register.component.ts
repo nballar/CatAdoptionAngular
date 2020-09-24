@@ -30,11 +30,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSave($event){
-
-    // But hey, this part works now!!! I can log EVERYTHING without it breaking, yay!!!
-    console.log("CLICKED", $event);
-
+  onSave(){
     this.firstName = (document.getElementById("FirstName") as HTMLInputElement).value;
     this.lastName = (document.getElementById("LastName") as HTMLInputElement).value;
     this.username = (document.getElementById("inputUsername") as HTMLInputElement).value;
@@ -51,13 +47,6 @@ export class RegisterComponent implements OnInit {
         alert("Please log in now with your new account.");
         this.router.navigate(['login']);
       }
-    )
-
-    console.log(u);
-
-    console.log((document.getElementById("FirstName") as HTMLInputElement).value);
-    console.log((document.getElementById("LastName") as HTMLInputElement).value);
-    console.log((document.getElementById("inputUsername") as HTMLInputElement).value);
-    console.log((document.getElementById("userAge") as HTMLInputElement).value);
+    );
   }
 }

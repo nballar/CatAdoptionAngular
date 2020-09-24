@@ -30,17 +30,13 @@ export class LoginComponent implements OnInit {
         console.log(response);
         this.loginservice.update(response).subscribe();
 
-
         this.userid = this.userTemp.userid;
-        // console.log(this.user);
         sessionStorage.setItem('userid', JSON.stringify(this.userid));
         sessionStorage.setItem('user', JSON.stringify(this.userTemp));
-        console.log(sessionStorage);
         this.router.navigate(['profile']);
       }
     );
-    /*let u :User = JSON.parse('response');
-       console.log(u.uId);*/
+    
     
   }      
      

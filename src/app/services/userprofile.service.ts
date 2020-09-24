@@ -17,7 +17,6 @@ export class UserprofileService {
   }
 
   addTask(t:Task): Observable<Task>{
-    //t.doer.userid = Number(sessionStorage.getItem("user"));
     return this.http.post("http://ec2-18-191-238-176.us-east-2.compute.amazonaws.com:8999/catadoption/task", t) as Observable<Task>
   }
 
