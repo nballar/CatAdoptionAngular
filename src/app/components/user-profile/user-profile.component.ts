@@ -11,6 +11,11 @@ import { AuthenticationService } from '../../services/authentication.service';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })
+ /*
+ This component is where the user can see their profile details
+ username, name, age, and points as well as their list of cats they have adopted
+ and this is also where they manage their tasks that will help them gain points upon completion
+*/
 export class UserProfileComponent implements OnInit {
   userId: Number;
   user: User;
@@ -26,17 +31,19 @@ export class UserProfileComponent implements OnInit {
   constructor(private us: UserprofileService, private cs: GetNekoService, private as: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.getUserObj();
+   this.getUserObj();
   }
-
+  /**
+   * getUserObj()
+   * 1.uses the stored user from login to get the user from the server
+   * in order to get the users cats they adopted and their tasks
+   * 2. the showcats() function is send called
+   * */
   getUserObj() {
     this.userId = Number(sessionStorage.getItem('userid'));
     this.us.getUser(this.userId).subscribe(
       (data) => {
         this.user = data;
-        // console.log(this.user);
-        // console.log(this.user.tasks);
-        // console.log("in tasks");
         this.tasks = this.user.tasks;
 
         let index:number = 0;
@@ -45,76 +52,64 @@ export class UserProfileComponent implements OnInit {
 
         }
         this.showCats();
-
-        // console.log(this.tasks);
       })
   }
-
+  /** addTask()
+   * 1. adds a new task to the database based on usr information
+   * 2. the page is reloaded to show the change
+   * 
+   * */
   addTask(){
-    console.log("CLICK MEH!");
     this.user = JSON.parse(sessionStorage.getItem("user"));
     this.task = new Task(0,this.input, false, 1, this.user);
-    console.log(this.task);
     this.us.addTask(this.task).subscribe();
     location.reload();
-
-   
   }
 
-  showCats(){
-    console.log(this.catIds);
-
-    for(let i of this.catIds){
+  
+  /** showCats() displays cats that the user has adopted
+   *
+   * */
+  showCats() {
+    for (let i of this.catIds) {
       this.cs.getCat(String(i)).subscribe(
         (data) => {
-          let t = new TempCat(data.CatImage,data.CatName);
+          let t = new TempCat(data.CatImage, data.CatName);
           this.ownedCats.push(t);
         }
       )
     }
 
-    console.log(this.ownedCats);
-
   }
 
+  /**
+   *
+   * @param event acknowledges which checkbox has been checked
+   * markComplete(): marks task as completes and updates necessary information
+   * 1. varifies the status of the event (whether checkbox is checked)
+   * 2. loops through the tasks in the user's list of tasks
+   * 3. checks each of the tasks in the list against the id of the "event"/ checkbox that was checked
+   * 4. sets the task as completed, updates the tas
+   * 5. increase user points by 20 for completing a task and updates user
+   */
   markComplete(event) {
-    console.log(event);
-    console.log("in mark complete method")
+    
     if (event.target.checked) {
-      console.log(event.target.value);
       for (let t in this.tasks) {
-        // console.log(this.tasks[t].taskid);
         if (this.tasks[t].taskid == event.target.value) {
-          console.log(this.tasks[t].completionStatus);
-          console.log(this.tasks[t].taskid + " should be marked as complete");
           this.tasks[t].completionStatus = true;
-          console.log(this.tasks[t].completionStatus);
-          console.log(this.tasks[t]);
-          let nt = new Task(this.tasks[t].taskid, this.tasks[t].description, this.tasks[t].completionStatus, this.tasks[t].frequency, this.user);
-          console.log(nt);
-          this.us.updateTask(nt).subscribe();
-
-          console.log(this.user);
-          console.log(this.user.points);
-
+          let newTask = new Task(this.tasks[t].taskid, this.tasks[t].description, this.tasks[t].completionStatus, this.tasks[t].frequency, this.user);
+          this.us.updateTask(newTask).subscribe();
           this.user.points += 20;
-
-          console.log(this.user.points);
-          console.log(this.user);
-
           this.as.update(this.user).subscribe(
             (data) => {
               sessionStorage.removeItem('user');
               let user = sessionStorage.setItem('user', JSON.stringify(this.user));
-              console.log(user);
             }
           )
         }
       }
     }
-     
-
-      //this.getUserObj();
     }
   }
 

@@ -12,6 +12,10 @@ import { AuthenticationService } from '../../services/authentication.service';
   templateUrl: './catprofile.component.html',
   styleUrls: ['./catprofile.component.css']
 })
+  /**
+   * This component is where the user can see all available and unavailable cats for adoption.
+   * Also where the user can choose to adopt their cats.
+   */
 export class CatprofileComponent implements OnInit {
 
   input: string;
@@ -114,7 +118,7 @@ export class CatprofileComponent implements OnInit {
           let user = sessionStorage.setItem('user', JSON.stringify(userObj));
           
         }
-    );
+      );
       this.router.navigate(['profile']);
     }
   }
