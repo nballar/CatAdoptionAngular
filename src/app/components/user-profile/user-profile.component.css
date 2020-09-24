@@ -9,7 +9,7 @@
 img{
   height: 10%;
   width: 10%;
-
+  border-radius: 5px;
 }
 
 .grid-container{
@@ -18,15 +18,19 @@ img{
     grid-template-columns: repeat(3, 1fr);
     gap: 5em;
     border-radius: 5px;
-    padding-block-end: 50px;
-    padding-block-start: 50px;
+    /* padding-block-end: 50px;
+    padding-block-start: 50px; */
+}
+
+#catName{
+  text-align: left;
 }
 
 .container{
-  background-color: #3f2914;
-  padding-bottom: 50px;
+  /* background-color: #3f2914; */
+  padding-bottom: 5px;
   border-radius: 5px;
-  padding-block-start: 50px;
+  padding-block-start: 15px;
 }
 
 .container-fluid{
@@ -54,7 +58,12 @@ h3{
   text-align: center;
   color: #ffe066;
   background-color: #3f2914;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
+
+
 
 input{
   float: left;
@@ -62,11 +71,19 @@ input{
   /* right:0px; */
 }
 
+
+/* You get to stay. You're not gross. */
 p{
   margin: auto;
   color: #ffe066;
   background-color: #3f2914;
-  padding-left: 50px;
-  padding-top: 5px;
+  padding-left: 15px;
+  padding-top: 1px;
   border-radius: 5px;
+  text-align: left;
+  column-width: 100px;
+}
+
+#userStuff{
+  background-color: #3f2914;
 }

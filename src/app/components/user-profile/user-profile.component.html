@@ -9,9 +9,15 @@
 <div class="container">
   <h3>Cats I Have Adopted:</h3>
   <div class="grid-container" *ngFor="let c of ownedCats">
-    <img src={{c.img}} alt="">
-    <p>{{c.name}}</p>
+        <img class="justify-content-center" src={{c.img}} alt="">
+    <div class="row justify-content-center">
+      <div class="cols-2">
+        <p class="row row-cols-2" id="catName">{{c.name}}</p>
+      </div>
+    </div>
   </div>
+
+  <br/>
 
 </div>
 <div class="container-fluid">
