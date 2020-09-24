@@ -30,7 +30,7 @@
     <div *ngFor="let t of tasks">
       <div  class="userTask" *ngIf="!t.completionStatus">
           <input type="checkbox" id="t.taskid" (change)="markComplete($event)" value="{{t.taskid}}">
-          <p>{{t.description}}</p>
+          <p id="taskDescription">{{t.description}}</p>
        </div>
      </div>
       <!--    <button class="btn btn-primary btn-sm float-right"> Mark Tasks as Complete</button>

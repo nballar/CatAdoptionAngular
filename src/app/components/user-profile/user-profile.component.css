@@ -84,6 +84,28 @@ p{
   column-width: 100px;
 }
 
+#taskDescription{
+  /* margin: auto; */
+  color: #ffe066;
+  background-color: #3f2914;
+  /* padding-left: 15px; */
+  /* padding-top: 1px; */
+  /* border-radius: 5px; */
+  text-align: left;
+  /* column-width: 100px; */
+}
+
 #userStuff{
   background-color: #3f2914;
+}
+
+#litButton{
+  color: #ffe066;
+  background-color: #3f2914;
+  border-color: #ffe066;
+}
+
+#litButton:hover{
+  color: #3f2914;
+  background-color: #ffb3da;
 }
