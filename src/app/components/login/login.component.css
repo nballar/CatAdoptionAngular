@@ -3,6 +3,24 @@
     padding: 10px;
     border-radius: 5px;
 }
+
+input{
+    border-color: #ffe066;
+    opacity: 0.8;
+    border-color: #ffe066;
+}
+
+input:focus{
+    border-color: #ffe066;
+    opacity: 0.8;
+    border-color: #ffe066;
+}
+
+::placeholder{
+    color: #ffe066;
+    opacity: 0.75;
+}
+
 .loginText{
     color: #ffe066;
 }

@@ -7,6 +7,10 @@ input:focus{
     background-color: #3f2914;
 }
 
+button{
+    color: #3f2914;
+}
+
 /* Nonstandard attribute styling*/
 ::placeholder{
     color: #ffe066;
@@ -57,6 +61,11 @@ input:focus{
 #register:active{
     color: #ffe066;
     background-color: #3f2914;
+}
+
+#register:hover{
+    color: #3f2914;
+    background-color: #ffb3da;
 }
 
 /* dropdown menu */
