@@ -9,16 +9,20 @@
   </div>
   <br/>
   <div>
-   
+
     <div class="card" *ngFor="let cat of cats">
-        <img src="{{cat.CatImage}}" style="width:28%; height:30%;">
-        <p *ngIf="hide" id="cat.CatId" value="{{cat.CatId}}">{{cat.CatId}}</p>
-        <h3>{{cat.CatName}}</h3>
-        <p class="title">
-          {{cat.CatDescription}} ({{cat.CatPersonality}})<br />
-          <span id="cat.CatPowerLevel">Worth: {{cat.CatPowerLevel}} pts</span>
-          <button *ngIf="!cat.CatTaken" class="btn btn-primary btn-sm float-right" ngDefaultControl (click)="adopt(cat.CatId, cat.CatPowerLevel)">Adopt</button>
-        </p>
+
+      <img src="{{cat.CatImage}}" style="width:28%; height:30%;">
+      <p *ngIf="hide" id="cat.CatId" value="{{cat.CatId}}">{{cat.CatId}}</p>
+      <div *ngIf="cat.CatTaken" id="background">
+        <p id="bg-text">Adopted</p>
+      </div>
+      <h3>{{cat.CatName}}</h3>
+      <p class="title">
+        {{cat.CatDescription}} ({{cat.CatPersonality}})<br />
+        <span id="cat.CatPowerLevel">Worth: {{cat.CatPowerLevel}} pts</span>
+        <button *ngIf="!cat.CatTaken" class="btn btn-primary btn-sm float-right" ngDefaultControl (click)="adopt(cat.CatId, cat.CatPowerLevel)">Adopt</button>
+
     </div>
     <br />
   </div>
