@@ -18,8 +18,9 @@ img{
     grid-template-columns: repeat(3, 1fr);
     gap: 5em;
     border-radius: 5px;
-    /* padding-block-end: 50px;
-    padding-block-start: 50px; */
+    border-left: 50px;
+    background-color: #3f2914;
+    text-align: center;
 }
 
 .container{
@@ -30,6 +31,7 @@ img{
 }
 
 .container-fluid{
+  margin: 0 auto;
   background-color: #3f2914;
   border-radius: 5px;
   padding-block-end: 50px;
