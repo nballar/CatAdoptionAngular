@@ -7,9 +7,11 @@
   <p id="userPoints">points: {{user.points}}</p>
 </div>
 <div class="container">
+  <br/>
   <h3>Cats I Have Adopted:</h3>
+  <br/>
   <div class="grid-container" *ngFor="let c of ownedCats">
-        <img class="justify-content-center" src={{c.img}} alt="">
+      <img src={{c.img}} alt="hand-drawn picture of a cartoon cat">
     <div class="row justify-content-center">
       <div class="cols-2">
         <p class="row row-cols-2" id="catName">{{c.name}}</p>
@@ -21,6 +23,7 @@
 
 </div>
 <div class="container-fluid">
+  <br/>
   <h3>Tasks I Need To Get To:</h3>
   <div>
     <input class="input" type="text" placeholder="description" id="litInput" [(ngModel)]="input"/>

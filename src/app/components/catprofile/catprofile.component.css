@@ -26,21 +26,29 @@ a {
   color: black;
 }
 
-  button:hover, a:hover {
-    opacity: 0.7;
-  }
+button{
+  color: #ffe066;
+  background-color: #3f2914;
+  border-color: #ffe066;
+}
 
-  h3{
+button:hover, a:hover {
+  color: #3f2914;
+  background-color: #ffb3da;
+  opacity: 0.7;
+}
+
+h3{
     font-size: 150%;
-  }
+}
 
-  /* #menuBar{
-    background-color: #3f2914;
-    color: #ffe066;
-  }
+/* #menuBar{
+  background-color: #3f2914;
+  color: #ffe066;
+}
 
-  #sort-by{
-    background-color: #3f2914;
-    color: #ffe066;
-    padding-left: 15px;
-  } */
+#sort-by{
+  background-color: #3f2914;
+  color: #ffe066;
+  padding-left: 15px;
+} */
