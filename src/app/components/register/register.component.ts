@@ -48,6 +48,7 @@ export class RegisterComponent implements OnInit {
     this.rs.addUser(u).subscribe(
       (response:User) =>{
         this.user = response;
+        alert("Please log in now with your new account.");
         this.router.navigate(['login']);
       }
     )
