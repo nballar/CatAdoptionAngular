@@ -2,26 +2,18 @@
     background-color: #3f2914;
 }
 
-#colorblock0{
+input:focus{
+    color:#3f2914;
     background-color: #3f2914;
-    border-radius: 5px;
 }
 
-#colorblock1{
-    background-color: #ffb3da;
-    border-radius: 5px;
+/* Nonstandard attribute styling*/
+::placeholder{
+    color: #ffe066;
+    opacity: 0.5;
 }
 
-#colorblock2{
-    background-color: #3a3a3a;
-    border-radius: 5px;
-}
-
-#colorblock3{
-    background-color: #80fdff;
-    border-radius: 5px;
-}
-
+/* Styling by Class*/
 .container-fluid{
     background-color: #3f2914;
     border-radius: 5px;
@@ -35,33 +27,90 @@
     padding: 25px;
 }
 
-/* Trying to make my signup inputs brown like Nancy's. They turn white when clicked, which makes the yellow text ICKY.
-*/
-::placeholder:focus{
-    text-decoration-color: #3f2914;
-    color: #3f2914;
-    outline: #ffb3da;
+/* Registration Form Sytling */
+.form-control{
+    color: #ffe066;
+    opacity: 0.8;
+    border-color: #ffe066;
 }
 
+.form-control:active{
+    color: #ffe066;
+}
+
+.form-control:focus{
+    color: #ffe066;
+    opacity: 1;
+}
+
+.form-control:visited{
+    color: #ffe066;
+    opacity: 1;
+}
+
+/* Styling by ID */
 #register{
     color: #ffe066;
     border-color: #ffe066;
 }
 
+#register:active{
+    color: #ffe066;
+    background-color: #3f2914;
+}
+
+/* dropdown menu */
+#profileSelection{
+    color: #ffe066;
+    background-color: #3f2914;
+    opacity: 0.8;
+}
+
+#profileSelection:hover{
+    background-color: #3f2914;
+    opacity: 1;
+}
+
+#profileSelection:visited{
+    color: #ffe066;
+    background-color: #3f2914;
+    opacity: 1;
+}
+
+/* Age Input*/
 #userAge{
+    color: #ffe066;
+    background-color: #3f2914;
+    opacity: 0.8;
     padding-left: 20px;
 }
 
-#register:hover{
-    color: #3f2914;
-    background-color: #ffb3da;
+#userAge:hover{
+    background-color: #3f2914;
+    opacity: 1;
 }
 
-::placeholder{
+#userAge:visited{
     color: #ffe066;
-    opacity: 0.5;
+    background-color: #3f2914;
+    opacity: 1;
 }
 
-/* This makes the buttons change color when the user hovers over them, making them easier to see.
- * I really like accessibility, so if it's okay, I'd like to put little things like that around the site.
-*/
+/* First and Last Name */
+#userAge{
+    color: #ffe066;
+    background-color: #3f2914;
+    opacity: 0.8;
+    padding-left: 20px;
+}
+
+#userAge:hover{
+    background-color: #3f2914;
+    opacity: 1;
+}
+
+#userAge:visited{
+    color: #ffe066;
+    background-color: #3f2914;
+    opacity: 1;
+}

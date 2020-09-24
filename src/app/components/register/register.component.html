@@ -12,24 +12,20 @@
                     <input type="text" class="form-control" placeholder="LastName" id="LastName">
                     </div>
                 </div>
-                <!-- <form> -->
                     <div class="row">
                         <div class="form-group col-md-5">
-                        <!-- <label for="inputEmail4">Username</label> -->
                         <br/>
-                        <input type="email" class="form-control" placeholder="username" id="inputUsername">
+                        <input type="text" class="form-control" placeholder="username" id="inputUsername">
                         </div>
                         <br/>
                         <div class="form-group col-md-5">
-                        <!-- <label for="inputPassword4">Password</label> -->
                         <br/>
                         <input type="password" class="form-control" placeholder="password" id="inputPassword4">
                         </div>
                         <br/>
                         <div class="form-group col-1">
-                        <!-- <label for="quantity">Age</label> -->
                         <br/>
-                        <input type="number" class="form-control" placeholder="Age" id="userAge" min="18"> <!--setting min age to 18 for adoptions Need to enforce this with TypeScript.-->
+                        <input type="number" class="form-control" placeholder="Age" id="userAge" min="18">
                         </div>
                         <div *ngFor="let p of catprofilepic">
                           <img src={{p}} style="width: 100px; height: 100px">
@@ -49,18 +45,6 @@
                     </div>
                     <br>
                 <button type="submit" class="btn btn-outline form-group" id="register" ngDefaultControl (click)="onSave()">Add me!</button>
-            <!-- </form> -->
         </div>
     </div>
 </div>
-
-<!--
-  Trying to find a way to do the color-blocked backgrounds:
-  https://getbootstrap.com/docs/4.0/components/card/ <-- more flexibility with size
-  https://getbootstrap.com/docs/4.0/layout/overview/ <-- spans entire page, which is what I want
-
-
-  Other places I'm looking for styling ideas:
-  https://getbootstrap.com/docs/4.0/components/navbar/
-  https://www.w3schools.com/bootstrap/bootstrap_navbar.asp
--->
