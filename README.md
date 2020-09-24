@@ -26,10 +26,10 @@ Users can:
 
 
 * **Mandatory Technologies:**
-  * Spring Framework, MVC and ORM
+  * Spring Framework, Spring Boot, Spring AOP and Spring Data JPA
   * Hibernate
   * Angular
   * Log4j
-  * JUnit
+  * JUnit, Mockito
   * Jenkins Pipeline
   * AWS RDS and EC2
