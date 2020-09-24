@@ -20,13 +20,11 @@ export class GetNekoService {
   }
 
   updateCat(c: Cat): Observable<Cat> {
-    return this.http.put<Cat>("http://localhost:8999/catadoption/cats", c) as Observable<Cat>;
-   // return this.http.put<Cat>("http://ec2-18-191-238-176.us-east-2.compute.amazonaws.com:8999/catadoption/cats", c) as Observable<Cat>;
+    return this.http.put<Cat>("http://ec2-18-191-238-176.us-east-2.compute.amazonaws.com:8999/catadoption/cats", c) as Observable<Cat>;
   }
 
 
   getAdoptedCats(): Observable<Cat[]> {
-    return this.http.get<Cat[]>("http://localhost:8999/catadoption/cats/adopted") as Observable<Cat[]>;
-   //return this.http.get<Cat[]>("http://ec2-18-191-238-176.us-east-2.compute.amazonaws.com:8999/catadoption/cats/adopted") as Observable<Cat[]>;
+   return this.http.get<Cat[]>("http://ec2-18-191-238-176.us-east-2.compute.amazonaws.com:8999/catadoption/cats/adopted") as Observable<Cat[]>;
   }
 }

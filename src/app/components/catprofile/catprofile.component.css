@@ -42,33 +42,19 @@ h3{
     font-size: 150%;
 }
 
-/* #menuBar{
-  background-color: #3f2914;
-  color: #ffe066;
-}
-
-#sort-by{
-  background-color: #3f2914;
-  color: #ffe066;
-  padding-left: 15px;
-} */
-
 
 #background {
   position: absolute;
   z-index: 0;
-  /* background:black; */
   color: black;
-  display: #5f7a7b;
   min-height: 50%;
   min-width: 50%;
 }
 
 #bg-text {
-  /* background:black; */
+  
   color: red;
   font-size: 55px;
   transform: rotate(330deg);
   -webkit-transform: rotate(330deg);
-  /* text-align: center; */
 }
