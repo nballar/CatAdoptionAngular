@@ -14,6 +14,7 @@
       <img src={{c.img}} alt="hand-drawn picture of a cartoon cat">
     <div class="row justify-content-center">
       <div class="cols-2">
+        <br/>
         <p class="row row-cols-2" id="catName">{{c.name}}</p>
       </div>
     </div>
@@ -24,12 +25,12 @@
 </div>
 <div class="container-fluid">
   <br/>
-  <h3>Tasks I Need To Get To:</h3>
+  <h3>My Tasks:</h3>
   <div>
     <input class="input" type="text" placeholder="description" id="litInput" [(ngModel)]="input"/>
     <button class="btn btn-light" id="litButton" (click)="addTask()">Add Task</button>
   </div>
-  <div class="grid-container">
+  <div class="grid-container2">
     <div *ngFor="let t of tasks">
       <div  class="userTask" *ngIf="!t.completionStatus">
           <input type="checkbox" id="t.taskid" (change)="markComplete($event)" value="{{t.taskid}}">
