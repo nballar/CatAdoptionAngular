@@ -6,26 +6,26 @@
             <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="FirstName" id="FirstName">
+                    <input type="text" class="form-control" placeholder="First Name (名)" id="FirstName">
                     </div>
                     <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="LastName" id="LastName">
+                    <input type="text" class="form-control" placeholder="Last Name (姓)" id="LastName">
                     </div>
                 </div>
                     <div class="row">
                         <div class="form-group col-md-5">
                         <br/>
-                        <input type="text" class="form-control" placeholder="username" id="inputUsername">
+                        <input type="text" class="form-control" placeholder="username (ユーザー名)" id="inputUsername">
                         </div>
                         <br/>
                         <div class="form-group col-md-5">
                         <br/>
-                        <input type="password" class="form-control" placeholder="password" id="inputPassword4">
+                        <input type="password" class="form-control" placeholder="password (パースワード)" id="inputPassword4">
                         </div>
                         <br/>
                         <div class="form-group col-1">
                         <br/>
-                        <input type="number" class="form-control" placeholder="Age" id="userAge" min="18">
+                        <input type="number" class="form-control" placeholder="Age" id="userAge" min="18" title="年齢">
                         </div>
                         <div *ngFor="let p of catprofilepic">
                           <img src={{p}} style="width: 100px; height: 100px">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <br>
-                <button type="submit" class="btn btn-outline form-group" id="register" ngDefaultControl (click)="onSave()">Add me!</button>
+                <button type="submit" class="btn btn-outline form-group" id="register" ngDefaultControl (click)="onSave()">Add me (記名)!</button>
         </div>
     </div>
 </div>
