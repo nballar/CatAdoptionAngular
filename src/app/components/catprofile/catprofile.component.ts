@@ -22,7 +22,6 @@ export class CatprofileComponent implements OnInit {
   public catId: number;
   public pointPrice: number;
   public adoptionStatus: boolean;
-  public adoptBool: boolean = false;
 
   powerLevel: number;
 
@@ -30,7 +29,6 @@ export class CatprofileComponent implements OnInit {
   user: string;
   userpts: number;
   
-  taken: boolean;
   cats: Catapi[];
   adoptedCats: Cat[];
 
@@ -40,19 +38,7 @@ export class CatprofileComponent implements OnInit {
     this.getAllCatsFunc();
     
   }
-  /*getCats(): void {
-    this.visible = false;
-    this.cs.getCat(this.input).subscribe(
-      (data) => {
-        this.cat = data;
-      },
-      () => {
-        this.cat = null;
-        console.log("something went wrong");
-      }
-    )
-  }*/
-
+ 
 
   getAllCatsFunc(): void {
     
@@ -68,23 +54,18 @@ export class CatprofileComponent implements OnInit {
     this.cs.getAllCats().subscribe(
       (data) => {
         this.cats = data;
-        this.taken = false;
-        //console.log(data);
-        //console.log(this.adoptedCats);
         for (let c in this.cats) {
+          this.cats[c].CatTaken = false;
+          //console.log(this.cats[c].CatTaken);
           //console.log("cat in api: " +this.cats[c].CatId);
           for (let ca in this.adoptedCats) {
             //console.log("cat in db: " +this.adoptedCats[ca].catid);
             if (Number(this.cats[c].CatId) == this.adoptedCats[ca].catid) {
               console.log("this cat " + c + " is adopted and should be hidden");
-              console.log(this.taken);
-              this.taken = true;
-              console.log(this.taken);
+              this.cats[c].CatTaken = true;
+              console.log(this.cats[c].CatTaken);
               }
             }
-          /*if (this.adoptBool) {
-            console.log("id of cat: " + data[c].catid);
-          }*/
         }
       },
       () => {
@@ -96,7 +77,6 @@ export class CatprofileComponent implements OnInit {
 
   //with this method, do we want to do an if statement that checks if the user had enough points to adopt the cat?-Nancy
   adopt(id: string, pl: string): void {
-    this.adoptBool = !this.adoptBool;
     console.log("in adopt button");
     this.catId = Number(id);
     this.pointPrice = Number(pl);

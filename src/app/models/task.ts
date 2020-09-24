@@ -7,8 +7,9 @@ export class Task {
     public frequency:number;
     public doer: User;
 
-    constructor(description:String, completionStatus:boolean, frequency:number, doer: User){
-        this.description=description,
+    constructor(taskid:number,description:String, completionStatus:boolean, frequency:number, doer: User){
+        this.taskid = taskid,
+        this.description = description,
         this.completionStatus=completionStatus,
         this.frequency=frequency,
         this.doer=doer

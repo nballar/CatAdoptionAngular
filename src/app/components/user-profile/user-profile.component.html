@@ -21,9 +21,13 @@
     <button class="btn btn-light" id="litButton" (click)="addTask()">Add Task</button>
   </div>
   <div class="grid-container">
-    <div class="userTask" *ngFor="let t of tasks">
-      <input type="checkbox" id="t.tasks">
-      <p>{{t.description}}</p>
+    <div *ngFor="let t of tasks">
+      <div  class="userTask" *ngIf="!t.completionStatus">
+          <input type="checkbox" id="t.taskid" (change)="markComplete($event)" value="{{t.taskid}}">
+          <p>{{t.description}}</p>
+       </div>
+     </div>
+      <!--    <button class="btn btn-primary btn-sm float-right"> Mark Tasks as Complete</button>
+  -->
     </div>
-  </div>
 </div>

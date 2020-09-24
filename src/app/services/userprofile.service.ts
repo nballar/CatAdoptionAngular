@@ -21,4 +21,8 @@ export class UserprofileService {
     return this.http.post("http://ec2-18-191-238-176.us-east-2.compute.amazonaws.com:8999/catadoption/task", t) as Observable<Task>
   }
 
+  updateTask(t: Task): Observable<Task[]>{
+    return this.http.put("http://ec2-18-191-238-176.us-east-2.compute.amazonaws.com:8999/catadoption/task", t) as Observable<Task[]>
+  }
+
 }

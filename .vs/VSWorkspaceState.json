@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\register",
-    "\\src\\app\\components\\user-profile",
+    "\\src\\app\\components\\catprofile",
+    "\\src\\app\\components\\login",
     "\\src\\app\\models",
     "\\src\\app\\services",
     "\\src\\assets",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\components\\register\\register.component.ts",
+  "SelectedNode": "\\src\\app\\models\\catapi.ts",
   "PreviewInSolutionExplorer": false
 }
