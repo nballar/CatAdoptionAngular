@@ -40,6 +40,10 @@ const routes: Routes = [{
   path:'profile',
   component:UserProfileComponent,
   canActivate:[AuthGuardService]
+},
+{
+  path:'',
+  component:AboutusComponent
 }
 ];
 

@@ -27,13 +27,12 @@ export class LoginComponent implements OnInit {
       (response: User) => {
         this.userTemp = response;
         response.points += 10;
-        console.log(response);
         this.loginservice.update(response).subscribe();
 
         this.userid = this.userTemp.userid;
         sessionStorage.setItem('userid', JSON.stringify(this.userid));
         sessionStorage.setItem('user', JSON.stringify(this.userTemp));
-        this.router.navigate(['profile']);
+        this.router.navigate(['homepage']);
       }
     );
     

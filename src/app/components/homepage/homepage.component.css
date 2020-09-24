@@ -1,23 +1,17 @@
 #colorblock0{
     background-color: #3f2914;
-}
-
-#colorblock1{
-    background-color: #80fdff;
-}
-
-#colorblock2{
-    background-color: #3a3a3a;
-}
-
-#colorblock3{
-    background-color: #ffb3da;
+    border-radius: 5px;
+    line-height: 180%;
 }
 
 h3{
    color: #ffe066;
+   padding: 10px;
+   padding-left: 15px;
 }
 
 p{
     color: #ffe066;
+    padding: 10px;
+    padding-left: 15px;
 }
