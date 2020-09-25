@@ -116,7 +116,7 @@ export class CatprofileComponent implements OnInit {
         (data) => {
           sessionStorage.removeItem('user');
           let user = sessionStorage.setItem('user', JSON.stringify(userObj));
-          
+          location.reload();
         }
       );
       this.router.navigate(['profile']);
