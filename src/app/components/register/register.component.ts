@@ -20,6 +20,10 @@ export class RegisterComponent implements OnInit {
 
   constructor(private rs:RegisterService, private router: Router) { }
 
+  hoverText = ["Cocoa","Dottie","Gabriel","Ginger",
+  "Marshmallow","Peaches"];
+
+
   catprofilepic = ["../../../assets/cocoa.png",
                   "../../../assets/dottie.png",
                   "../../../assets/gabriel.png",
@@ -49,4 +53,5 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
+
 }
