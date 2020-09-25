@@ -22,6 +22,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
  
+  /**
+   * checkLogin()
+   * 1.Passes UserDTO information and gets back a user from database.
+   * 2.With user, adds 10 points to user's points & updates user
+   * 3.Stores the user and user id in session storage and navigates to the home page
+   * */
   checkLogin() {
     this.loginservice.authenticate(this.username, this.password).subscribe(
       (response: User) => {

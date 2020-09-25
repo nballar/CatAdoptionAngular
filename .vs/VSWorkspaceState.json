@@ -5,12 +5,9 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\catprofile",
-    "\\src\\app\\components\\login",
-    "\\src\\app\\models",
-    "\\src\\app\\services",
-    "\\src\\assets",
-    "\\src\\environments"
+    "\\src\\app\\components\\user-profile",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\models\\catapi.ts",
+  "SelectedNode": "\\src\\app\\components\\user-profile\\user-profile.component.ts",
   "PreviewInSolutionExplorer": false
 }
