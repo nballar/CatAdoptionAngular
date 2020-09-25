@@ -9,6 +9,13 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
+/**
+   * canActivate()
+   * 1.Checks if user is logged in by checking the session storage
+   * 2.If user logged in, can access the routes
+   * 3.If user not logged in, alerts user that they must be logged in to access these routes and navigates them to login
+   * */
+
 const routes: Routes = [{
   path:'login',
   component:LoginComponent
